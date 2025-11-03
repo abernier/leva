@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { NumberInput } from '../ValueInput'
-import { Label, Row } from '../UI'
+import { NumberInput } from '../../components/ValueInput'
+import { Label, Row } from '../../components/UI'
 import { useDrag } from '../../hooks'
 import { RangeGrid } from './StyledNumber'
 import { RangeSlider } from './RangeSlider'
 import { useInputContext } from '../../context'
 import type { NumberProps } from './number-types'
 import { multiplyStep } from '../../utils'
-import { InnerNumberLabel } from '../ValueInput/StyledInput'
+import { InnerNumberLabel } from '../../components/ValueInput/StyledInput'
 
 type DraggableLabelProps = {
   label: string
@@ -18,7 +18,14 @@ type DraggableLabelProps = {
 
 const DraggableLabel = React.memo(({ label, onUpdate, step, innerLabelTrim }: DraggableLabelProps) => {
   const [dragging, setDragging] = useState(false)
-  const bind = useDrag(({ active, delta: [dx], event, memo = 0 }) => {
+  const bind = useDrag(({ active, delta: [dx], event, memo = 0, first, last, target }) => {
+    if (first) {
+      const label = target as HTMLElement
+      label.requestPointerLock()
+    }
+    if (last) {
+      document.exitPointerLock()
+    }
     setDragging(active)
     memo += dx / 2
     if (Math.abs(memo) >= 1) {

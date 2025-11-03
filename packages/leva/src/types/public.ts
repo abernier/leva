@@ -1,7 +1,7 @@
 /**
  * Types exposed through the public API
  */
-import type { VectorSettings } from '../components/Vector/vector-types'
+import type { VectorSettings } from '../plugins/Vector/vector-types'
 import { StoreType, Data, DataInput } from './internal'
 import type { BeautifyUnionType, UnionToIntersection } from './utils'
 
@@ -59,7 +59,7 @@ export type ButtonGroupOpts = {
 export type ButtonGroupInputOpts =
   | ButtonGroupOpts
   | {
-      label?: string | JSX.Element | null
+      label?: string | React.JSX.Element | null
       opts: ButtonGroupOpts
     }
 
@@ -143,7 +143,7 @@ type SchemaItem =
 
 type GenericSchemaItemOptions = {
   render?: RenderFn
-  label?: string | JSX.Element
+  label?: string | React.JSX.Element
   hint?: string
   order?: number
 }
@@ -321,7 +321,7 @@ export interface Plugin<Input, Value = Input, InternalSettings = {}> {
 
 export type InputContextProps = {
   id: string
-  label: string | JSX.Element
+  label: string | React.JSX.Element
   hint?: string
   path: string
   key: string

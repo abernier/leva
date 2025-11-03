@@ -1,5 +1,31 @@
 # leva
 
+## 0.10.1
+
+### Patch Changes
+
+- 7315fc4: Fix handling of negative numbers in math expressions
+- d32ffaf: `@radix-ui/*` upgrades to prevent peerDeps warnings with React 19
+
+## 0.10.0
+
+### Minor Changes
+
+- b9c6376: feat: use Pointer Lock API for Number input
+- 3d4a620: feat!: React 18 and 19 support
+
+## 0.9.36
+
+### Patch Changes
+
+- b613ceb: fix(deps): pin joystick and color picker
+
+## 0.9.35
+
+### Patch Changes
+
+- d658bf0: fix(leva): update radiux-ui for peer deps
+
 ## 0.9.34
 
 ### Patch Changes
