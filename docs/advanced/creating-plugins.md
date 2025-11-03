@@ -1,3 +1,9 @@
+---
+title: Creating Plugins
+description:
+nav: 1
+---
+
 # Creating Plugins
 
 @TODO

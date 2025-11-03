@@ -1,3 +1,9 @@
+---
+title: Plugins
+description:
+nav: 0
+---
+
 # Plugins
 
 What are plugins

@@ -1,5 +1,0 @@
-# Special Inputs
-
-### Button
-
-### Monitor
